@@ -1,3 +1,5 @@
+export HELM_REPO=./helm-repo
 
-helm package ../ms-app
-helm repo index docs --url https://github.com/laurentpoirierfr/helm-charts
+helm lint ${HELM_REPO}/*
+helm package ${HELM_REPO}/*
+helm repo index --url https://github.com/laurentpoirierfr/helm-charts .
