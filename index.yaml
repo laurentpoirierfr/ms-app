@@ -3,7 +3,17 @@ entries:
   ms-app:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2023-10-02T12:16:16.484443232+02:00"
+    created: "2024-06-22T21:16:25.633043484+02:00"
+    description: A Helm chart for Kubernetes
+    digest: ca9f4177246272d8099fafe6db539525dfccfe385f9e1efc9f0c13ee8f3f197e
+    name: ms-app
+    type: application
+    urls:
+    - https://laurentpoirierfr.github.io/helm-charts/ms-app-0.2.0.tgz
+    version: 0.2.0
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2024-06-22T21:16:25.631937402+02:00"
     description: A Helm chart for Kubernetes
     digest: f31e1c6bbeed362d2066a4c86c640c73c2dc57c571b3b63dc9e9462cfa1767aa
     name: ms-app
@@ -11,4 +21,4 @@ entries:
     urls:
     - https://laurentpoirierfr.github.io/helm-charts/ms-app-0.1.0.tgz
     version: 0.1.0
-generated: "2023-10-02T12:16:16.483494906+02:00"
+generated: "2024-06-22T21:16:25.630227194+02:00"
