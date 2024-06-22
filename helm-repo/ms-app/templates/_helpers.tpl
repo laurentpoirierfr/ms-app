@@ -63,7 +63,11 @@ Create the name of the service account to use
 
 {{/*
 Ce bloc peut être inclus dans une définition de Pod pour configurer les variables d'environnement pour les conteneurs.
+
 Exemple de values.yaml  :
+
+secret:
+  name: app-env-secret
 
 env:
   secret:
@@ -79,7 +83,7 @@ env:
 - name: {{ $key }}
   valueFrom:
     secretKeyRef:
-      name: app-env-secret
+      name: {{ .Values.secret.name }}
       key: {{ $key }}
 {{- end}}
 {{- range $key, $val := .Values.env.normal }}

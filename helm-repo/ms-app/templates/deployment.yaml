@@ -36,11 +36,7 @@ spec:
           # =============================================================
           #  Ajout des variables d'environnements
           # =============================================================
-          env:          
-            {{- range .Values.env }}
-            - name: "{{ .name }}"
-              value: "{{ .value }}"
-            {{- end }}
+          {{- include "helpers.list-env-variables" . | indent 6 }}
           # =============================================================
           ports:
             - name: http
