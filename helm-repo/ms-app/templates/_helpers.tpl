@@ -60,3 +60,30 @@ Create the name of the service account to use
 {{- default "default" .Values.serviceAccount.name }}
 {{- end }}
 {{- end }}
+
+{{/*
+Ce bloc peut être inclus dans une définition de Pod pour configurer les variables d'environnement pour les conteneurs.
+Exemple de values.yaml  :
+
+env:
+  secret:
+    DB_PASSWORD: "mypassword"
+    API_KEY: "myapikey"
+  normal:
+    DB_HOST: "localhost"
+    DB_PORT: "5432"
+    
+*/}}
+{{- define "helpers.list-env-variables"}}
+{{- range $key, $val := .Values.env.secret }}
+- name: {{ $key }}
+  valueFrom:
+    secretKeyRef:
+      name: app-env-secret
+      key: {{ $key }}
+{{- end}}
+{{- range $key, $val := .Values.env.normal }}
+- name: {{ $key }}
+  value: {{ $val | quote }}
+{{- end}}
+{{- end }}
